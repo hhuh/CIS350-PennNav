@@ -12,7 +12,8 @@
         android:id="@+id/buildingsearch"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="175dp" />
+        android:layout_marginTop="175dp"
+        android:onClick="onBuildingButtonClick"/>
 
     <Button
         android:layout_width="wrap_content"
