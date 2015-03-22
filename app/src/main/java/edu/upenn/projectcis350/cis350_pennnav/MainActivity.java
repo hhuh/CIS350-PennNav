@@ -41,7 +41,7 @@ public class MainActivity extends ActionBarActivity {
 
     public void onBuildingButtonClick(View v){
         // Change the GameActivity to the building
-        //Intent i = new Intent(this, GameActivity.class);
-        //startActivity(i);
+        Intent i = new Intent(this, BuildingActivity.class);
+        startActivity(i);
     }
 }

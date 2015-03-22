@@ -1,4 +1,4 @@
-package cis350.upenn.edu.group34;
+package edu.upenn.projectcis350.cis350_pennnav;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
