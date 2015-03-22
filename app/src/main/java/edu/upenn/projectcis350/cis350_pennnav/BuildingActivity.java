@@ -38,9 +38,9 @@ public class BuildingActivity extends ActionBarActivity {
     }
 
     public void onFloorButtonClick(View v) {
-        //Intent i = new Intent(this, FloorActivity.class);
-        //i.putExtra("buildingName",building);
-        //startActivityForResult(i, FloorActivity_ID);
+        Intent i = new Intent(this, FloorActivity.class);
+        i.putExtra("buildingName",building);
+        startActivityForResult(i, FloorActivity_ID);
     }
 
     @Override
