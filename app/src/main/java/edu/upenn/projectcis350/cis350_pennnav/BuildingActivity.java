@@ -21,7 +21,7 @@ public class BuildingActivity extends ActionBarActivity {
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            buildingName = getIntent().getExtras().getString("buildingName");
+            buildingName = getIntent().getExtras().getString("Building name");
         }
         TextView tv = (TextView) findViewById(R.id.buildingName);
         tv.setText(buildingName);
