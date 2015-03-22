@@ -1,18 +1,16 @@
 package edu.upenn.projectcis350.cis350_pennnav;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
 
-
-public class BuildingActivity extends ActionBarActivity {
+/**
+ * Created by Ankha on 3/21/2015.
+ */
+public class FloorActivity extends Activity {
     String buildingName;
-    String description = "Altered in 1926 by Paul Cret, this building housed the first working multi-purpose Electronic Numerical Integrator And Computer (ENIAC) that was the first modern computer.";
-    String[] facilities = {"classroom", "bathroom"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,26 +19,11 @@ public class BuildingActivity extends ActionBarActivity {
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            buildingName = getIntent().getExtras().getString("Building name");
+            buildingName = getIntent().getExtras().getString("buildingName");
         }
-        TextView tv = (TextView) findViewById(R.id.buildingName);
-        tv.setText(buildingName);
 
-        TextView tv2 = (TextView) findViewById(R.id.description);
-        tv2.setText(description);
-
-        String facilityNames = "";
-        for (String f : facilities) {
-            facilityNames += (f + ", ");
-        }
-        TextView tv3 = (TextView) findViewById(R.id.facilityName);
-        tv3.setText(facilityNames);
-    }
-
-    public void onFloorButtonClick(View v) {
-        Intent i = new Intent(this, FloorActivity.class);
-        i.putExtra("buildingName",building);
-        startActivityForResult(i, FloorActivity_ID);
+        TextView text = (TextView) findViewById(R.id.textView2);
+        text.setText(buildingName);
     }
 
     @Override
@@ -63,5 +46,11 @@ public class BuildingActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onBackButtonClicked(View view) {
+        Intent i = new Intent(this, FloorActivity.class);
+        i.putExtra("buildingName",buildingName);
+        startActivity(i);
     }
 }
