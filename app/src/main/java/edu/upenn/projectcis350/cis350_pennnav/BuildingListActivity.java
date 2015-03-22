@@ -2,6 +2,7 @@ package edu.upenn.projectcis350.cis350_pennnav;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -33,11 +34,11 @@ public class BuildingListActivity extends Activity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                             @Override
                                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                                //Intent intent = new Intent(this, BuildingActivity.class);
+                                                Intent intent = new Intent(context, BuildingActivity.class);
                                                 String name = buildings[position];
-                                                Toast.makeText(context, name, Toast.LENGTH_SHORT).show();
-                                                //intent.putExtra("Building name", name);
-                                                //startActivityForResult(intent, 1);
+                                                //Toast.makeText(context, name, Toast.LENGTH_SHORT).show();
+                                                intent.putExtra("Building name", name);
+                                                startActivityForResult(intent, 1);
                                             }
                                         }
         );
