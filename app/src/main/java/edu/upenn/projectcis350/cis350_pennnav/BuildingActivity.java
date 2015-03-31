@@ -21,7 +21,7 @@ public class BuildingActivity extends ActionBarActivity {
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            buildingName = getIntent().getExtras().getString("Building name");
+            buildingName = getIntent().getExtras().getString("buildingName");
         }
         TextView tv = (TextView) findViewById(R.id.buildingName);
         tv.setText(buildingName);
@@ -38,9 +38,9 @@ public class BuildingActivity extends ActionBarActivity {
     }
 
     public void onFloorButtonClick(View v) {
-        Intent i = new Intent(this, FloorActivity.class);
-        i.putExtra("buildingName",buildingName);
-        startActivity(i);
+        //Intent i = new Intent(this, FloorActivity.class);
+        //i.putExtra("buildingName",building);
+        //startActivityForResult(i, FloorActivity_ID);
     }
 
     @Override
