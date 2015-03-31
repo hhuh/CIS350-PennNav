@@ -1,15 +1,18 @@
 package edu.upenn.projectcis350.cis350_pennnav;
 
 import android.content.Intent;
+import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
+
 
 /**
  * Created by Ankha on 3/21/2015.
  */
-public class FloorActivity extends Activity {
+public class FloorActivity extends ActionBarActivity {
     String buildingName;
 
     @Override
