@@ -18,7 +18,7 @@ public class FloorActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_building);
+        setContentView(R.layout.activity_floors);
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -52,8 +52,8 @@ public class FloorActivity extends ActionBarActivity {
     }
 
     public void onBackButtonClicked(View view) {
-        Intent i = new Intent(this, FloorActivity.class);
-        i.putExtra("buildingName",buildingName);
+        Intent i = new Intent(this, BuildingActivity.class);
+        i.putExtra("Building name",buildingName);
         startActivity(i);
     }
 }
