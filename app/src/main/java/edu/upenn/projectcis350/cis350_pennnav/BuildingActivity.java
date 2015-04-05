@@ -48,6 +48,7 @@ public class BuildingActivity extends ActionBarActivity {
                                                 String name = facilities[position];
                                                 //Toast.makeText(context, name, Toast.LENGTH_SHORT).show();
                                                 intent.putExtra("Facility name", name);
+                                                intent.putExtra("buildingName", buildingName);
                                                 startActivityForResult(intent, 1);
                                             }
                                         }

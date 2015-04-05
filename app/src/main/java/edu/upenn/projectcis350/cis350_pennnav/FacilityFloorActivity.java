@@ -16,6 +16,7 @@ import android.widget.TextView;
 public class FacilityFloorActivity extends ActionBarActivity {
     String[] floors = {"basement","1","2","3","4"};
     String facilityName;
+    String buildingName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,13 +40,15 @@ public class FacilityFloorActivity extends ActionBarActivity {
 
         ListView listView = (ListView) findViewById(R.id.listView3);
         listView.setAdapter(adapter);
+        //Needs to send the floor #, the classroom list, and the facility list along with the
+        // building name.
         /*listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                             @Override
                                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                                Intent intent = new Intent(context, FloorDepth.class);
+                                                Intent intent = new Intent(context, FloorDepthActivity.class);
                                                 String floorNum = floors[position];
                                                 //Toast.makeText(context, name, Toast.LENGTH_SHORT).show();
-                                                intent.putExtra("Floor", floorNum);
+                                                intent.putExtra("buildingName", buildingName);
                                                 startActivityForResult(intent, 1);
                                             }
                                         }

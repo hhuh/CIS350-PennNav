@@ -65,6 +65,7 @@ public class FloorDepthActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    //May need to make another intent because this button has to go to two places.
     public void onBackButtonClicked(View view) {
         Intent i = new Intent(this, FloorActivity.class);
         i.putExtra("buildingName", buildingName);
