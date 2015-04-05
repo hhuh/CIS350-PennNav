@@ -11,4 +11,6 @@
     <string name="classList3">301, 302 (office), 303, 304, 305</string>
     <string name="facilities2">Elevator, Water Fountain, Mens Restroom, Womens Restroom, Bump Space,
         Office</string>
+    <string name="title_activity_facility_floor">FacilityFloorActivity</string>
+
 </resources>
