@@ -1,27 +1,44 @@
 package edu.upenn.projectcis350.cis350_pennnav;
 
+import android.content.Context;
 import android.content.Intent;
 import android.app.Activity;
+import android.content.res.AssetFileDescriptor;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 
 public class MainActivity extends Activity {
 
+    //global variable here
     ArrayList<String> JSONList = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        if(JSONList.size() == 0){
-        }
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        final Context context = getApplicationContext();
+
+        if(JSONList.size() == 0){
+            try {
+                Reader reader = new Reader(getAssets().open("class.json"));
+                JSONList = reader.readAll();
+
+                //System.out.println(JSONList.size() + "--------------------!!!!");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+                //System.out.println("ERRORERRORERRORERRORERRORERRORERRORERRORERRORERROR");
+            }
+        }
     }
 
 
@@ -50,12 +67,14 @@ public class MainActivity extends Activity {
     public void onBuildingButtonClick(View v){
         // Change the GameActivity to the building
         Intent i = new Intent(this, BuildingListActivity.class);
+        i.putStringArrayListExtra("JSONList", JSONList);
         startActivity(i);
     }
 
     public void onFacilityButtonClick(View v) {
         //Change the GameActivity to the facility list
         Intent i = new Intent(this, FacilityListActivity.class);
+        i.putStringArrayListExtra("JSONList", JSONList);
         startActivity(i);
     }
 }

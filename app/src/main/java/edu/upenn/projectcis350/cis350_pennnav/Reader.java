@@ -1,5 +1,7 @@
 package edu.upenn.projectcis350.cis350_pennnav;
 
+import android.content.res.AssetFileDescriptor;
+import android.content.res.AssetManager;
 import android.util.JsonReader;
 
 import org.json.simple.JSONObject;
@@ -9,6 +11,8 @@ import org.json.simple.parser.ParseException;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -20,25 +24,21 @@ public class Reader {
     String FILENAME = "class.json";
     ArrayList<String> JSONList = new ArrayList<String>();
 
-    public Reader(){
+    public Reader(InputStream is){
 
-        try {
-            Scanner input = new Scanner(new BufferedReader(new FileReader(FILENAME)));
-            while(input.hasNextLine()){
-                String line = input.nextLine();
-                JSONList.add(line);
-            }
-            input.close();
-        } catch (FileNotFoundException e) {
-            System.err.println("File not found!");
+        Scanner input = new Scanner(new BufferedReader(new InputStreamReader(is)));
+        while(input.hasNextLine()){
+            String line = input.nextLine();
+            JSONList.add(line);
         }
+        input.close();
     }
 
     public ArrayList<String> readAll(){
         return JSONList;
     }
 
-    public String getAttribute(String line, String attributeType){
+    static public String getAttribute(String line, String attributeType){
         JSONParser parser = new JSONParser();
         try {
             JSONObject obj = (JSONObject)parser.parse(line);
@@ -50,7 +50,7 @@ public class Reader {
         return null;
     }
 
-    public ArrayList<String> getListOfSameAttribute(ArrayList<String> list, String attributeType, String attribute){
+    static public ArrayList<String> getListOfSameAttribute(ArrayList<String> list, String attributeType, String attribute){
 
         ArrayList<String> reducedList = new ArrayList<String>();
 

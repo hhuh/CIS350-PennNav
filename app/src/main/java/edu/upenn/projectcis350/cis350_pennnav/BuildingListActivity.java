@@ -13,11 +13,15 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /**
  * Created by Brian on 3/21/2015.
  */
 public class BuildingListActivity extends Activity {
     String[] buildings = {"Towne", "Moore", "Levine", "Skirkanich"};
+    ArrayList<String> BuildingList = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +30,17 @@ public class BuildingListActivity extends Activity {
 
         final Context context = getApplicationContext();
 
+        ArrayList<String> JSONList = getIntent().getStringArrayListExtra("JSONList");
+
+        for(int i = 0; i < JSONList.size(); i++){
+            String name = Reader.getAttribute(JSONList.get(i), "building");
+            if(!BuildingList.contains(name)){
+                BuildingList.add(name);
+            }
+        }
+
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, buildings);
+                android.R.layout.simple_list_item_1, BuildingList);
 
         ListView listView = (ListView) findViewById(R.id.listView);
 
@@ -37,7 +50,7 @@ public class BuildingListActivity extends Activity {
                                             @Override
                                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                                 Intent intent = new Intent(context, BuildingActivity.class);
-                                                String name = buildings[position];
+                                                String name = BuildingList.get(position);
                                                 //Toast.makeText(context, name, Toast.LENGTH_SHORT).show();
                                                 intent.putExtra("Building name", name);
                                                 startActivityForResult(intent, 1);
