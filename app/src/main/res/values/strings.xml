@@ -4,6 +4,11 @@
     <string name="app_name">CIS350-PennNav</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="classList">101, 102, 103, 104, 105</string>
-    <string name="facilities">Elevator, Water Fountain, Mens Restroom, Womens Restroom</string>
+    <string name="classList1">101 (auditorium), 102, 103, 104, 105</string>
+    <string name="facilities">Elevator, Water Fountain, Mens Restroom, Womens Restroom,
+        Auditorium</string>
+    <string name="classList2">201, 202, 203, 204, 205</string>
+    <string name="classList3">301, 302 (office), 303, 304, 305</string>
+    <string name="facilities2">Elevator, Water Fountain, Mens Restroom, Womens Restroom, Bump Space,
+        Office</string>
 </resources>

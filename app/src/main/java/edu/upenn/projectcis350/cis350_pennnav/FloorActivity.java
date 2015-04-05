@@ -1,11 +1,13 @@
 package edu.upenn.projectcis350.cis350_pennnav;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -27,6 +29,118 @@ public class FloorActivity extends ActionBarActivity {
 
         TextView text = (TextView) findViewById(R.id.textView2);
         text.setText(buildingName);
+
+        final Context context = getApplicationContext();
+
+        final TextView t1 = (TextView) findViewById(R.id.textView);
+        final TextView t2 = (TextView) findViewById(R.id.textView7);
+        final TextView t3 = (TextView) findViewById(R.id.textView12);
+
+        ImageView i1 = (ImageView) findViewById(R.id.imageView);
+        ImageView i2 = (ImageView) findViewById(R.id.imageView2);
+        ImageView i3 = (ImageView) findViewById(R.id.imageView3);
+
+        t1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, FloorDepthActivity.class);
+                final TextView classList = (TextView) findViewById(R.id.textView4);
+                final TextView facilityList = (TextView) findViewById(R.id.textView6);
+                String floorNum = "1";
+                CharSequence classRooms = classList.getText();
+                CharSequence facilities = facilityList.getText();
+                intent.putExtra("Floor number", floorNum);
+                intent.putExtra("Classes", classRooms);
+                intent.putExtra("Facilities", facilities);
+                //Toast.makeText(context, floorNum, Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+        });
+
+        i1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, FloorDepthActivity.class);
+                final TextView classList = (TextView) findViewById(R.id.textView4);
+                final TextView facilityList = (TextView) findViewById(R.id.textView6);
+                String floorNum = "1";
+                CharSequence classRooms = classList.getText();
+                CharSequence facilities = facilityList.getText();
+                intent.putExtra("Floor number", floorNum);
+                intent.putExtra("Classes", classRooms);
+                intent.putExtra("Facilities", facilities);
+                //Toast.makeText(context, floorNum, Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+        });
+
+        t2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, FloorDepthActivity.class);
+                final TextView classList = (TextView) findViewById(R.id.textView9);
+                final TextView facilityList = (TextView) findViewById(R.id.textView11);
+                String floorNum = "2";
+                CharSequence classRooms = classList.getText();
+                CharSequence facilities = facilityList.getText();
+                intent.putExtra("Floor number", floorNum);
+                intent.putExtra("Classes", classRooms);
+                intent.putExtra("Facilities", facilities);
+                //Toast.makeText(context, floorNum, Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+        });
+
+        i2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, FloorDepthActivity.class);
+                final TextView classList = (TextView) findViewById(R.id.textView9);
+                final TextView facilityList = (TextView) findViewById(R.id.textView11);
+                String floorNum = "2";
+                CharSequence classRooms = classList.getText();
+                CharSequence facilities = facilityList.getText();
+                intent.putExtra("Floor number", floorNum);
+                intent.putExtra("Classes", classRooms);
+                intent.putExtra("Facilities", facilities);
+                //Toast.makeText(context, floorNum, Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+        });
+
+        t3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, FloorDepthActivity.class);
+                final TextView classList = (TextView) findViewById(R.id.textView14);
+                final TextView facilityList = (TextView) findViewById(R.id.textView16);
+                String floorNum = "3";
+                CharSequence classRooms = classList.getText();
+                CharSequence facilities = facilityList.getText();
+                intent.putExtra("Floor number", floorNum);
+                intent.putExtra("Classes", classRooms);
+                intent.putExtra("Facilities", facilities);
+                //Toast.makeText(context, floorNum, Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+        });
+
+        i3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, FloorDepthActivity.class);
+                final TextView classList = (TextView) findViewById(R.id.textView14);
+                final TextView facilityList = (TextView) findViewById(R.id.textView16);
+                String floorNum = "3";
+                CharSequence classRooms = classList.getText();
+                CharSequence facilities = facilityList.getText();
+                intent.putExtra("Floor number", floorNum);
+                intent.putExtra("Classes", classRooms);
+                intent.putExtra("Facilities", facilities);
+                //Toast.makeText(context, floorNum, Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
