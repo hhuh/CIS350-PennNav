@@ -22,6 +22,8 @@
             android:name=".BuildingActivity"/>
         <activity
             android:name=".FloorActivity"/>
+        <activity
+            android:name=".FacilityListActivity"/>
     </application>
 
 </manifest>

@@ -22,7 +22,8 @@
         android:id="@+id/facilitysearch"
         android:layout_below="@+id/buildingsearch"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="62dp" />
+        android:layout_marginTop="62dp"
+        android:onClick="onFacilityButtonClick"/>
 
     <TextView
         android:layout_width="wrap_content"

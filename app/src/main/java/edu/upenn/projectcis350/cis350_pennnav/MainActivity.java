@@ -44,4 +44,10 @@ public class MainActivity extends ActionBarActivity {
         Intent i = new Intent(this, BuildingListActivity.class);
         startActivity(i);
     }
+
+    public void onFacilityButtonClick(View v) {
+        //Change the GameActivity to the facility list
+        Intent i = new Intent(this, FacilityListActivity.class);
+        startActivity(i);
+    }
 }
