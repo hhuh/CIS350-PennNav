@@ -20,6 +20,8 @@
             android:name=".BuildingListActivity"/>
         <activity
             android:name=".BuildingActivity"/>
+        <activity
+            android:name=".FloorActivity"/>
     </application>
 
 </manifest>
