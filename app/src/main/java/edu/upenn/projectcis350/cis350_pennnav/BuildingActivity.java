@@ -16,7 +16,7 @@ import android.widget.TextView;
 public class BuildingActivity extends ActionBarActivity {
     String buildingName;
     String description = "Altered in 1926 by Paul Cret, this building housed the first working multi-purpose Electronic Numerical Integrator And Computer (ENIAC) that was the first modern computer.";
-    String[] facilities = {"classroom", "bathroom"};
+    String[] facilities = {"classroom", "water fountain", "male restroom", "female restroom"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
