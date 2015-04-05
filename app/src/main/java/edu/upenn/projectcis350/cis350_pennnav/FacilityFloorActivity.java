@@ -44,7 +44,6 @@ public class FacilityFloorActivity extends ActionBarActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                Intent intent = new Intent(context, FloorDepth.class);
                                 Intent intent = new Intent(context, FloorDepthActivity.class);
                                 String floorNum = floors[position];
                                 //Toast.makeText(context, name, Toast.LENGTH_SHORT).show();
