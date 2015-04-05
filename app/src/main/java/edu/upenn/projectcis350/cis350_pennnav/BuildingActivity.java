@@ -1,18 +1,22 @@
 package edu.upenn.projectcis350.cis350_pennnav;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 
 public class BuildingActivity extends ActionBarActivity {
     String buildingName;
     String description = "Altered in 1926 by Paul Cret, this building housed the first working multi-purpose Electronic Numerical Integrator And Computer (ENIAC) that was the first modern computer.";
-    String[] facilities = {"classroom", "bathroom"};
+    String[] facilities = {"classroom", "water fountain", "male restroom", "female restroom"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,12 +33,27 @@ public class BuildingActivity extends ActionBarActivity {
         TextView tv2 = (TextView) findViewById(R.id.description);
         tv2.setText(description);
 
-        String facilityNames = "";
-        for (String f : facilities) {
-            facilityNames += (f + ", ");
-        }
-        TextView tv3 = (TextView) findViewById(R.id.facilityName);
-        tv3.setText(facilityNames);
+        /* list of facilities */
+        final Context context = getApplicationContext();
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, facilities);
+
+        ListView listView = (ListView) findViewById(R.id.listView2);
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                            @Override
+                                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                                Intent intent = new Intent(context, FacilityFloorActivity.class);
+                                                String facilityName = facilities[position];
+                                                //Toast.makeText(context, name, Toast.LENGTH_SHORT).show();
+                                                intent.putExtra("Facility name", facilityName);
+                                                intent.putExtra("Building name", buildingName);
+                                                startActivityForResult(intent, 1);
+                                            }
+                                        }
+        );
+
     }
 
     public void onFloorButtonClick(View v) {

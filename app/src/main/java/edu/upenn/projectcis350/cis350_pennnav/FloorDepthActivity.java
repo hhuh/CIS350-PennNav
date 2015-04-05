@@ -14,6 +14,7 @@ import android.widget.TextView;
  */
 public class FloorDepthActivity extends ActionBarActivity {
 
+    String buildingName;
     String topText = "Floor Number: ";
     String rooms = "The following classrooms/auditoriums are on this floor: ";
     String facilities = "This floor has the following: ";
@@ -28,6 +29,7 @@ public class FloorDepthActivity extends ActionBarActivity {
             topText = topText + getIntent().getExtras().getString("Floor number");
             rooms = rooms + getIntent().getExtras().getString("Classes");
             facilities = facilities + getIntent().getExtras().getString("Facilities");
+            buildingName = getIntent().getExtras().getString("buildingName");
         }
 
         TextView top = (TextView) findViewById(R.id.textView17);
@@ -63,8 +65,10 @@ public class FloorDepthActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    //May need to make another intent because this button has to go to two places.
     public void onBackButtonClicked(View view) {
         Intent i = new Intent(this, FloorActivity.class);
+        i.putExtra("buildingName", buildingName);
         startActivity(i);
     }
 }

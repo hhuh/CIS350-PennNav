@@ -16,18 +16,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/facilityName"
-        android:textSize="20sp"
-        android:layout_below="@+id/buildingName"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-
 
     <Button
         android:layout_width="wrap_content"
@@ -35,17 +23,26 @@
         android:text="view floors"
         android:id="@+id/floorButton"
         android:onClick="onFloorButtonClick"
-        android:layout_marginBottom="171dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/listView2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/description"
-        android:layout_below="@+id/facilityName"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/buildingName" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView2"
+        android:layout_below="@+id/description"
+        android:layout_above="@+id/button3"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
@@ -54,9 +51,9 @@
         android:layout_height="wrap_content"
         android:text="Back"
         android:id="@+id/button3"
-        android:layout_marginTop="58dp"
-        android:layout_alignTop="@+id/floorButton"
-        android:layout_centerHorizontal="true"
-        android:onClick="OnBackButtonClick"/>
+        android:onClick="OnBackButtonClick"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

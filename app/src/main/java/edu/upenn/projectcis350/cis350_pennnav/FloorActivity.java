@@ -52,6 +52,7 @@ public class FloorActivity extends ActionBarActivity {
                 intent.putExtra("Floor number", floorNum);
                 intent.putExtra("Classes", classRooms);
                 intent.putExtra("Facilities", facilities);
+                intent.putExtra("buildingName", buildingName);
                 //Toast.makeText(context, floorNum, Toast.LENGTH_SHORT).show();
                 startActivity(intent);
             }
@@ -69,6 +70,7 @@ public class FloorActivity extends ActionBarActivity {
                 intent.putExtra("Floor number", floorNum);
                 intent.putExtra("Classes", classRooms);
                 intent.putExtra("Facilities", facilities);
+                intent.putExtra("buildingName", buildingName);
                 //Toast.makeText(context, floorNum, Toast.LENGTH_SHORT).show();
                 startActivity(intent);
             }
@@ -86,6 +88,7 @@ public class FloorActivity extends ActionBarActivity {
                 intent.putExtra("Floor number", floorNum);
                 intent.putExtra("Classes", classRooms);
                 intent.putExtra("Facilities", facilities);
+                intent.putExtra("buildingName", buildingName);
                 //Toast.makeText(context, floorNum, Toast.LENGTH_SHORT).show();
                 startActivity(intent);
             }
@@ -103,6 +106,7 @@ public class FloorActivity extends ActionBarActivity {
                 intent.putExtra("Floor number", floorNum);
                 intent.putExtra("Classes", classRooms);
                 intent.putExtra("Facilities", facilities);
+                intent.putExtra("buildingName", buildingName);
                 //Toast.makeText(context, floorNum, Toast.LENGTH_SHORT).show();
                 startActivity(intent);
             }
@@ -120,6 +124,7 @@ public class FloorActivity extends ActionBarActivity {
                 intent.putExtra("Floor number", floorNum);
                 intent.putExtra("Classes", classRooms);
                 intent.putExtra("Facilities", facilities);
+                intent.putExtra("buildingName", buildingName);
                 //Toast.makeText(context, floorNum, Toast.LENGTH_SHORT).show();
                 startActivity(intent);
             }
@@ -137,6 +142,7 @@ public class FloorActivity extends ActionBarActivity {
                 intent.putExtra("Floor number", floorNum);
                 intent.putExtra("Classes", classRooms);
                 intent.putExtra("Facilities", facilities);
+                intent.putExtra("buildingName", buildingName);
                 //Toast.makeText(context, floorNum, Toast.LENGTH_SHORT).show();
                 startActivity(intent);
             }

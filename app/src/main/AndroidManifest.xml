@@ -16,16 +16,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".BuildingListActivity" />
+        <activity android:name=".BuildingActivity" />
+        <activity android:name=".FloorActivity" />
+        <activity android:name=".FloorDepthActivity" />
+        <activity android:name=".FacilityListActivity" />
         <activity
-            android:name=".BuildingListActivity"/>
-        <activity
-            android:name=".BuildingActivity"/>
-        <activity
-            android:name=".FloorActivity"/>
-        <activity
-            android:name=".FloorDepthActivity"/>
-        <activity
-            android:name=".FacilityListActivity"/>
+            android:name=".FacilityFloorActivity"
+            android:label="@string/title_activity_facility_floor" >
+        </activity>
     </application>
 
 </manifest>
