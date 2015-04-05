@@ -18,4 +18,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/textView"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:id="@+id/button4"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:focusable="false"
+        android:onClick="onBackButtonClick"/>
+
 </RelativeLayout>

@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -26,9 +27,10 @@ public class BuildingListActivity extends Activity {
         final Context context = getApplicationContext();
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                R.layout.activity_building_list, R.id.textView, buildings);
+                android.R.layout.simple_list_item_1, buildings);
 
         ListView listView = (ListView) findViewById(R.id.listView);
+
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -65,5 +67,10 @@ public class BuildingListActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onBackButtonClick(View view) {
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
     }
 }

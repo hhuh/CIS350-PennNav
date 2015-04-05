@@ -64,4 +64,9 @@ public class BuildingActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void OnBackButtonClick(View view) {
+        Intent i = new Intent(this, BuildingListActivity.class);
+        startActivity(i);
+    }
 }

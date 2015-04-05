@@ -26,7 +26,7 @@ public class FacilityListActivity extends Activity {
         final Context context = getApplicationContext();
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                R.layout.activity_facility_list, R.id.textView, facilities);
+                android.R.layout.simple_list_item_1, facilities);
 
         ListView listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(adapter);
@@ -65,5 +65,10 @@ public class FacilityListActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onBackButtonClick(View view) {
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
     }
 }
