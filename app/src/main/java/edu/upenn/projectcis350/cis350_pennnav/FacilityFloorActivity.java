@@ -27,6 +27,7 @@ public class FacilityFloorActivity extends ActionBarActivity {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             facilityName = getIntent().getExtras().getString("Facility name");
+            buildingName = getIntent().getExtras().getString("Building name");
         }
         TextView tv = (TextView) findViewById(R.id.textView7);
         tv.setText(facilityName + "s are located on these floors:");
@@ -76,5 +77,11 @@ public class FacilityFloorActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onBackButtonClick(View view) {
+        Intent i = new Intent(this, BuildingActivity.class);
+        i.putExtra("Building name",buildingName);
+        startActivity(i);
     }
 }

@@ -16,7 +16,7 @@ import android.widget.TextView;
 public class BuildingActivity extends ActionBarActivity {
     String buildingName;
     String description = "Altered in 1926 by Paul Cret, this building housed the first working multi-purpose Electronic Numerical Integrator And Computer (ENIAC) that was the first modern computer.";
-    String[] facilities = {"classroom", "bathroom"};
+    String[] facilities = {"classroom", "water fountain", "male restroom", "female restroom"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,10 +45,15 @@ public class BuildingActivity extends ActionBarActivity {
                                             @Override
                                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                                 Intent intent = new Intent(context, FacilityFloorActivity.class);
-                                                String name = facilities[position];
+                                                String facilityName = facilities[position];
                                                 //Toast.makeText(context, name, Toast.LENGTH_SHORT).show();
+<<<<<<< HEAD
                                                 intent.putExtra("Facility name", name);
                                                 intent.putExtra("buildingName", buildingName);
+=======
+                                                intent.putExtra("Facility name", facilityName);
+                                                intent.putExtra("Building name", buildingName);
+>>>>>>> 2166f965c0b8f1c66e0d92dee0ac49b12e1f6580
                                                 startActivityForResult(intent, 1);
                                             }
                                         }
