@@ -41,22 +41,13 @@ public class FacilityFloorActivity extends ActionBarActivity {
 
         ListView listView = (ListView) findViewById(R.id.listView3);
         listView.setAdapter(adapter);
-<<<<<<< HEAD
-        //Needs to send the floor #, the classroom list, and the facility list along with the
-        // building name.
-        /*listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-=======
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
->>>>>>> 06ce88fdd9896f0ce4ab08f8eeac10335dac8c8f
                                             @Override
                                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                                 Intent intent = new Intent(context, FloorDepthActivity.class);
                                                 String floorNum = floors[position];
                                                 //Toast.makeText(context, name, Toast.LENGTH_SHORT).show();
-<<<<<<< HEAD
-=======
                                                 intent.putExtra("Floor number", floorNum);
->>>>>>> 06ce88fdd9896f0ce4ab08f8eeac10335dac8c8f
                                                 intent.putExtra("buildingName", buildingName);
                                                 startActivityForResult(intent, 1);
                                             }
