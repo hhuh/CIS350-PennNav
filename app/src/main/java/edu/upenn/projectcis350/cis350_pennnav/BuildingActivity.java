@@ -45,9 +45,10 @@ public class BuildingActivity extends ActionBarActivity {
                                             @Override
                                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                                 Intent intent = new Intent(context, FacilityFloorActivity.class);
-                                                String name = facilities[position];
+                                                String facilityName = facilities[position];
                                                 //Toast.makeText(context, name, Toast.LENGTH_SHORT).show();
-                                                intent.putExtra("Facility name", name);
+                                                intent.putExtra("Facility name", facilityName);
+                                                intent.putExtra("Building name", buildingName);
                                                 startActivityForResult(intent, 1);
                                             }
                                         }
